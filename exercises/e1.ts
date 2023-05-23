@@ -12,6 +12,11 @@
 
 export function getFirstTenNumbers() {
   // Your code goes here...
+  let result: number[] = []
+  for (let i = 0; i < 11; i++) {
+    result.push(i)
+  }
+  return result
 }
 
 // === TEST YOURSELF ===
