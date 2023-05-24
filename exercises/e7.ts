@@ -16,9 +16,29 @@
 
 import { BankAccount } from './e5';
 
-export function getClientWithLeastPositiveBalance(arr) {
+export function getClientWithLeastPositiveBalance(arr: BankAccount[]) {
   // Your code goes here...
+  let positiveAccounts: BankAccount[] = []
+  let result: BankAccount[] = []
+
+  for (let i: number = 0; i < arr.length; i ++) {
+    if (arr[i].balance > 0) {
+      positiveAccounts.push(arr[i])
+    }
+  }
+  if (positiveAccounts.length > 0) {
+    result.push(positiveAccounts[0])
+    for ( let i: number = 0; i < positiveAccounts.length; i++) {
+      if ( positiveAccounts[i].balance < result[0].balance) {
+        result.pop()
+        result.push(positiveAccounts[i])
+      }
+    }
+    return result
+  }
+  return result
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
