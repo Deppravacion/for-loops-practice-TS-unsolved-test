@@ -12,7 +12,13 @@
  */
 
 // Declare a type here...
-export type BankAccount = {};
+export type BankAccount = {
+  id: number
+  name: string
+  balance: number
+  deposits: number[]
+  withdrawals: number[]
+};
 
 /**
  * @task
@@ -24,8 +30,13 @@ export type BankAccount = {};
  * Example: getNumbersWithSquareRoots(17) => [0, 1, 4, 9, 16]
  */
 
-export function getAllClientNames(arr) {
+export function getAllClientNames(arr: BankAccount[]) {
   // Your code goes here...
+  let result: string[] = []
+  for (const account of arr) {
+    result.push(account.name) 
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

@@ -16,8 +16,15 @@
  * Example: findMinValueInArray([2, 45, 32, 3, 0, 46, 12]) => 0
  */
 
-export function findMinValueInArray(arr) {
+export function findMinValueInArray(arr: number[]) {
   // Your code goes here...
+  let MIN: number = arr[0]
+  for (const num of arr) {
+    if ( num < MIN ) {
+      MIN = num
+    }
+  }
+  return MIN
 }
 
 /**
@@ -32,8 +39,15 @@ export function findMinValueInArray(arr) {
  * Example: findMaxValueInArray([2, 45, 32, 3, 0, 46, 12]) => 46
  */
 
-export function findMaxValueInArray(arr) {
+export function findMaxValueInArray(arr: number[]) {
   // Your code goes here...
+  let MAX: number = arr[0]
+  for( const elm of arr) {
+    if (MAX < elm) {
+      MAX = elm
+    }
+  }
+  return MAX
 }
 
 // === TEST YOURSELF ===

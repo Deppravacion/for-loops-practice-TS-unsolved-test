@@ -16,8 +16,13 @@
  * Example: getAverage([22, 45, 4, 65]) => 34
  */
 
-export function getAverage(arr) {
+export function getAverage(arr:number[]) {
   // Your code goes here...
+  let sum:number = 0
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i]    
+  }
+  return sum / arr.length
 }
 
 /**
@@ -33,8 +38,15 @@ export function getAverage(arr) {
  * Example2: getStringSum("GHIUJUHSG") => 0
  * */
 
-export function getStringSum(str) {
+export function getStringSum(str:string) {
   // Your code goes here...
+  let sum:number = 0
+  for (let i:number = 0 ; i < str.length; i++) {
+    if (+str[i] % 1 == 0) {
+      sum += +str[i]
+    }
+  }
+  return sum
 }
 
 // === TEST YOURSELF ===
