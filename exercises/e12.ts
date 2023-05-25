@@ -13,8 +13,19 @@
 
 import { BankAccount } from './e5';
 
-export function getAllDepositsGreaterThanOneHundred(arr) {
+export function getAllDepositsGreaterThanOneHundred(arr: BankAccount[]) {
   // Your code goes here...
+  let result: number[] = [] 
+  for ( let i: number = 0 ; i < arr.length; i++) {
+    if (arr[i].deposits != undefined ) {
+      for ( const deposit of arr[i].deposits) {
+        if ( deposit > 100) {
+          result.push(deposit)
+        }
+      }
+    }
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

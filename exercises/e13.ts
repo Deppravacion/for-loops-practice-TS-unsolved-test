@@ -13,9 +13,27 @@
 
 import { BankAccount } from './e5';
 
-export function getAllAccountsWithSumsOfDepositsLess2000(arr) {
+export function getAllAccountsWithSumsOfDepositsLess2000(arr: BankAccount[]) {
   // Your code goes here...
+  let result: BankAccount[] = []
+
+  for (let i: number = 0; i < arr.length; i++) {
+    if ( arr[i].deposits == undefined) {
+      result.push(arr[i])
+    } else {
+      let sum: number = 0 
+      for (let j: number = 0 ; j <arr[i].deposits.length; j++)  {
+        sum += arr[i].deposits[j]
+      }
+    if (sum < 2000) {
+      result.push(arr[i])
+    }    
+    }    
+  }
+  return result
 }
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-13"

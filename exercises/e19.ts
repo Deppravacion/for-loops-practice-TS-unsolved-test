@@ -12,8 +12,15 @@
  * Example: reverseArray([1, 2, 3, 'f', 'd', 4]) => [4, 'd', 'f', 3, 2, 1]
  */
 
-export function reverseArray(arr) {
+
+
+export function reverseArray<T>(arr: T[]) {
   // Your code goes here...
+  let result: T[] = []
+  for (let i: number = 0; i < arr.length; i++) {
+    result.unshift(arr[i])
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

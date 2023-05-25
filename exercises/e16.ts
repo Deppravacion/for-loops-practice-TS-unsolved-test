@@ -13,8 +13,21 @@
  * NOTE: You can NOT use the array.flat() method in your code
  */
 
-export function flatArrays(arr) {
+export function flatArrays<T>(arr: T[]): T[] {
   // Your code goes here...
+  let result: T[] = []
+  for (let i: number = 0; i < arr.length; i++) {
+    const elm = arr[i]
+    if (Array.isArray(elm)) {
+      const nestedArr = flatArrays(elm)
+      for (let k: number = 0; k < nestedArr.length; k++) {
+        result.push(nestedArr[k])
+      }
+    } else {
+      result.push(elm)
+    }
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

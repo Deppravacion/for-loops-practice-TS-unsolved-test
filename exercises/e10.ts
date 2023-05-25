@@ -16,8 +16,19 @@
 
 import { BankAccount } from './e5';
 
-export function getClientsWithLetterInName({ arr, letter }) {
+export function getClientsWithLetterInName({ arr, letter }: {arr: BankAccount[], letter: string}) {
   // Your code goes here...
+  let result: string[] = []
+  for (let i: number = 0; i < arr.length; i++) {
+    let bool: boolean = false
+    for( let k: number = 0 ; k < arr[i].name.length; k++) {
+      if (arr[i].name[k].toLocaleLowerCase() == letter.toLocaleLowerCase()) {
+        bool = true
+      }      
+    }
+    bool ? result.push(arr[i].name) : null
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

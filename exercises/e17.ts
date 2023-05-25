@@ -17,8 +17,19 @@
  * NOTE: You can NOT use the array.includes() method in your code
  */
 
-export function doesArrayInclude({ arr, value }) {
+export interface Myface<T> {
+  arr: T[];
+  value: T;
+}
+export function doesArrayInclude<T>({ arr, value }: Myface<T>): boolean {
   // Your code goes here...
+  let result: boolean = false
+  for ( let i: number = 0; i < arr.length; i++) {
+    if ( arr[i] == value ) {
+      result = true
+    }
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

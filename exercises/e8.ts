@@ -14,8 +14,16 @@
 
 import { BankAccount } from './e5';
 
-export function getClientWithGreatestBalance(arr) {
+export function getClientWithGreatestBalance(arr: BankAccount[]) {
   // Your code goes here...
+  let result: BankAccount[] = [arr[0]]
+  for (let i: number = 0; i < arr.length; i++) {
+    if (arr[i].balance > result[0].balance) {
+      result.pop()
+      result.push(arr[i])
+    }
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

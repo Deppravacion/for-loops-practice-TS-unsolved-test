@@ -13,7 +13,7 @@
 export function getFirstTenNumbers() {
   // Your code goes here...
   let result: number[] = []
-  for (let i:number = 1; i <= 1; i++) {
+  for (let i:number = 1; i <= 10; i++) {
     result.push(i)
   }
   return result

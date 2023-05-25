@@ -14,8 +14,29 @@
  * NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
  */
 
-export function separateNamesWithAFromRest(arr) {
+export function separateNamesWithAFromRest(arr: string[]) {
   // Your code goes here...
+  let result: string[][] = []
+  let includesA: string[] = []
+  let notA: string[] = []
+  // loop through given Aray and build the includesA, and notA string Array
+  for (let i: number = 0; i < arr.length;  i++) {
+    const str: string = arr[i]
+    let bool: boolean = false
+    for (let f: number = 0 ; f < str.length; f++) {
+      if (str[f].toLocaleLowerCase() === 'a') {
+        bool = true
+      }
+    }
+    if (bool) {
+      includesA.push(str)
+    } else {
+      notA.push(str)
+    }
+  }
+  result = [[...includesA], [...notA]]
+
+return result
 }
 
 // === TEST YOURSELF ===

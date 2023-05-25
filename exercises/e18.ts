@@ -13,9 +13,28 @@
  * NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
  */
 
-export function joinToString({ arr, separator }) {
-  // Your code goes here...
+export interface Myface<T> {
+  arr: T[];
+  separator: string;
 }
+
+export function joinToString<T extends string>({ arr, separator }: Myface<T>): string {
+  // Your code goes here...
+  let subStrArr: string[] = []
+  let result: string = ''
+
+  for (let i: number = 0; i < arr.length; i ++ ) {
+    subStrArr.push(arr[i])
+    if (i < arr.length - 1) {
+      subStrArr.push(separator)
+    }
+  }
+  for (let f: number = 0; f < subStrArr.length; f++) {
+    result += `${subStrArr[f]}`
+  }
+  return result
+}
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"

@@ -13,8 +13,15 @@
 
 import { BankAccount } from './e5';
 
-export function getClientsWithBalanceOverOneHundred(arr) {
+export function getClientsWithBalanceOverOneHundred(arr: BankAccount[]) {
   // Your code goes here...
+  let result: BankAccount[] = []
+  for (let i: number = 0; i < arr.length; i++) {
+    if ( arr[i].balance > 100 ) {
+      result.push(arr[i])
+    }
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

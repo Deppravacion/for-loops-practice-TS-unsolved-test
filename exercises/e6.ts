@@ -15,8 +15,16 @@
 
 import { BankAccount } from './e5';
 
-export function getClientWithNoMoney(array) {
+export function getClientWithNoMoney(array: BankAccount[]) {
   // Your code goes here...
+  let result: string[] = []
+  for (let i: number = 0; i < array.length; i++) {
+    const person: BankAccount = array[i]
+    if (person.balance == 0) {
+      result.push(person.name)
+    }
+  }
+  return result
 }
 
 // === TEST YOURSELF ===

@@ -14,9 +14,24 @@
 
 import { BankAccount } from './e5';
 
-export function getAllWithdrawals(arr) {
+export function getAllWithdrawals(arr: BankAccount[]) {
   // Your code goes here...
+
+  let result: number[] = []
+  for(let i: number = 0; i < arr.length; i++) {
+    let sum: number = 0 
+    if (arr[i].withdrawals == undefined ) {
+      result.push(sum)
+    } else {
+      for (let j: number = 0 ; j < arr[i].withdrawals.length; j++) {
+        sum += arr[i].withdrawals[j]
+      }
+      result.push(sum)
+    }
+  }
+  return result
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

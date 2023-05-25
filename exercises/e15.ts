@@ -15,8 +15,16 @@
  * Example: concatArrays(['d', 'r', 'a'], ['f', 'y']) => ['d', 'r', 'a', 'f', 'y']
  */
 
-export function concatArrays(arr1, arr2) {
+export function concatArrays(arr1: number[], arr2: number[]) {
   // Your code goes here...
+  let result: number[] = []
+  for (let i: number = 0; i < arr1.length; i ++) {
+    result.push(arr1[i])
+  }
+  for (let p: number = 0; p < arr2.length; p ++) {
+    result.push(arr2[p])
+  }
+  return result
 }
 
 // === TEST YOURSELF ===
